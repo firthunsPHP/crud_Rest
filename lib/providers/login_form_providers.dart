@@ -4,8 +4,8 @@ class LoginFormProvider extends ChangeNotifier {
 // pra saber la referencia de nuyestro formulario............
   GlobalKey<FormState> formKey = new GlobalKey<FormState>();
 
-  String email    = '';
-  String password = '';
+  String email    = 'ferfef@gmail.com';
+  String password = '123456';
 
   bool _isLoading = false;
   bool get isLoading => _isLoading;
