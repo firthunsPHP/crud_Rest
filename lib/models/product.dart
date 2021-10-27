@@ -10,6 +10,7 @@ class Product {
     this.picture,
     required this.price,
 
+    this.id
 
   });
 
@@ -36,4 +37,16 @@ class Product {
     "picture": picture,
     "price": price,
   };
+
+/***  metodo copy(), conbseguimos romper la refencia
+ * del producto que enviamos a otra actividad
+ * para ser modificado, eliminado,...*/
+  Product copy() => Product(
+      available: available,
+      name: name,
+      picture: picture,
+      price: price,
+      id: id
+  );
+
 }

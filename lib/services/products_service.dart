@@ -8,6 +8,10 @@ class ProductsService extends ChangeNotifier{
   // https://crudflutter-7623c-default-rtdb.europe-west1.firebasedatabase.app/products.json
   final String _baseUrl = 'crudflutter-7623c-default-rtdb.europe-west1.firebasedatabase.app';
   final List<Product> products = [];
+
+  late Product selectedProduct;
+  // Product? selectedProduct;
+
   bool isLoading = true;
 
   ProductsService(){

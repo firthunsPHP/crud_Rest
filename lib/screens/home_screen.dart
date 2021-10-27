@@ -13,6 +13,7 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
 
     final productsService = Provider.of<ProductsService>(context);
+
      if( productsService.isLoading ) return LoadingScreen();
 
     return Scaffold(
@@ -22,7 +23,11 @@ class HomeScreen extends StatelessWidget {
       body: ListView.builder(
         itemCount: productsService.products.length ,
           itemBuilder: ( BuildContext context, int index )=> GestureDetector(
-            onTap: () => Navigator.pushNamed(context, 'product'),
+            onTap: () {
+              // funcion que una vez seleccionado la imagene nos lo manda a la siguiente ventana
+              productsService.selectedProduct =  productsService.products[index].copy();
+              Navigator.pushNamed(context, 'product');
+            },
               child: ProductCard(
                 product: productsService.products[index],
               )
